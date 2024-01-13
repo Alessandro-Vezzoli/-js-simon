@@ -3,8 +3,11 @@ deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il
 il software dice quanti e quali dei numeri da indovinare sono stati individuati.*/
 
 //visualizzare 5 numeri casuali (math.random)
-
-//salvarli in una variabile (let)
+for (let index = 0; index < 5; index++) {
+  const randomNumber = Math.floor(Math.random() * 10);
+  [index];
+  console.log(randomNumber);
+}
 
 //far fartire un timer di 30 secondi (setInterval)
 
