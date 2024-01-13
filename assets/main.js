@@ -11,6 +11,15 @@ for (let index = 0; index < 5; index++) {
 
 //far fartire un timer di 30 secondi (setInterval)
 
+let count = 30;
+const timer = setInterval(function () {
+  count--;
+  console.log(count);
+  if (count === 0) {
+    clearInterval(timer);
+    console.log("Finito il tempo");
+  }
+}, 1000);
 //finiti i 30 secondi i numeri scompaiono dallo schermo (addClass= display:none)
 
 //far partire un prompt dove l'utente deve inserire i 5 numeri
