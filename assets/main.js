@@ -5,13 +5,13 @@ il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 //visualizzare 5 numeri casuali (math.random)
 let randomNumber = "";
 for (let index = 0; index < 5; index++) {
-  randomNumber += Math.floor(Math.random() * 10) + " ";
+  randomNumber += Math.floor(Math.random() * 10);
   console.log(randomNumber);
 }
 document.getElementById("number").innerHTML = randomNumber;
 
 //far fartire un timer di 30 secondi (setInterval)
-let count = 30;
+let count = 5;
 const timer = setInterval(function () {
   count--;
   console.log(count);
@@ -23,11 +23,21 @@ const timer = setInterval(function () {
 
     //finiti i 30 secondi i numeri scompaiono dallo schermo (addClass= display:none)
     document.getElementById("number").style.visibility = "hidden";
+
+    //far partire un prompt dove l'utente deve inserire i 5 numeri
+
+    const userNumber = prompt("inserire i numeri");
+
+    //fare un controllo che i 5 numeri inseriti dall'utente siano uguali a quelli casuali nella variabile (let)
+
+    if (randomNumber === userNumber) {
+      console.log(randomNumber + " " + userNumber + " i numeri sono giustiiii");
+    } else {
+      console.log(
+        randomNumber + " " + userNumber + " i numeri sono sbagliati "
+      );
+    }
   }
 }, 1000);
-
-//far partire un prompt dove l'utente deve inserire i 5 numeri
-
-//fare un controllo che i 5 numeri inseriti dall'utente siano uguali a quelli casuali nella variabile (let)
 
 //far uscire un alert con scritto se i numeri sono giusti oppure no
