@@ -16,28 +16,37 @@ const timer = setInterval(function () {
   count--;
   console.log(count);
   if (count === 0) {
+    document.getElementById("number").style.visibility = "hidden";
     clearInterval(timer);
 
-    document.getElementById("Finish").innerHTML = "Finito il tempo";
-    console.log("Finito il tempo");
-
     //finiti i 30 secondi i numeri scompaiono dallo schermo (addClass= display:none)
-    document.getElementById("number").style.visibility = "hidden";
+    document.getElementById("Finish").innerHTML = "Finito il tempo";
 
-    //far partire un prompt dove l'utente deve inserire i 5 numeri
-
-    const userNumber = prompt("inserire i numeri");
-
-    //fare un controllo che i 5 numeri inseriti dall'utente siano uguali a quelli casuali nella variabile (let)
-
-    if (randomNumber === userNumber) {
-      console.log(randomNumber + " " + userNumber + " i numeri sono giustiiii");
-    } else {
-      console.log(
-        randomNumber + " " + userNumber + " i numeri sono sbagliati "
-      );
-    }
+    const await = setTimeout(awaitUserNumber, 1000);
   }
 }, 1000);
-
-//far uscire un alert con scritto se i numeri sono giusti oppure no
+//far partire un prompt dove l'utente deve inserire i 5 numeri
+function awaitUserNumber() {
+  const userNumber = prompt("inserire i numeri");
+  //fare un controllo che i 5 numeri inseriti dall'utente siano uguali a quelli casuali nella variabile (let)
+  if (randomNumber === userNumber) {
+    console.log(randomNumber + " " + userNumber + " i numeri sono giustiiii");
+    alert(
+      "I NUMERI RANDOM: " +
+        randomNumber +
+        " I NUMERI INSERITI: " +
+        userNumber +
+        " I NUMERI SONO ESATTI "
+    );
+  } else {
+    console.log(randomNumber + " " + userNumber + " i numeri sono sbagliati ");
+    alert(
+      "I NUMERI RANDOM: " +
+        randomNumber +
+        " I NUMERI INSERITI: " +
+        userNumber +
+        " I NUMERI NON  SONO ESATTI "
+    );
+  }
+  //far uscire un alert con scritto se i numeri sono giusti oppure no
+}
